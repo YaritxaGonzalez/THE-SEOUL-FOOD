@@ -6,19 +6,23 @@ function inyectarFooter(){
 }
 
 function inyectarHeader(){
-    document.getElementById("header").innerHTML = `
-        <section><h1 class='no-select'>The Seoul Food</h1></section>
-        <section><a href='#inicio'>inicio</a></section>
+    document.getElementById("header").innerHTML = "<section><h1 class='no-select'>The Seoul Food</h1></section><section><a href='#inicio'>inicio</a>";
+}
+function inyectarMenuUsuario(){
+    var header = document.getElementById("header");
+
+    // Creamos el HTML del menú y lo agregamos al final del header (sin borrar lo que ya tiene)
+    header.insertAdjacentHTML("beforeend", `
         <div class="user-menu">
             <button id="menu">
                 <box-icon type='solid' name='user' color="#fff"></box-icon>
             </button>
             <div id="userMenuDropdown" class="hidden">
-                <button id="inicio">Iniciar sesión</button>
+                <button id="iniciarSesion">Iniciar sesión</button>
                 <button id="registrase">Registrarse</button>
             </div>
         </div>
-    `;
+    `);
 
     activarMenuUsuario();
 }
@@ -26,7 +30,7 @@ function inyectarHeader(){
 function activarMenuUsuario(){
     var menu = document.getElementById("menu");
     var userMenuDropdown = document.getElementById("userMenuDropdown");
-    var inicio = document.getElementById("inicio");
+    var iniciarSesion = document.getElementById("iniciarSesion");
     var registrase = document.getElementById("registrase");
 
     menu.onclick = function () {
@@ -37,7 +41,7 @@ function activarMenuUsuario(){
         }
     };
 
-    inicio.onclick = function () {
+    iniciarSesion.onclick = function () {
         window.location.href = "paginas/inicio_sesion.html";
     };
 
@@ -47,4 +51,5 @@ function activarMenuUsuario(){
 }
 
 inyectarHeader();
+inyectarMenuUsuario();
 inyectarFooter();
