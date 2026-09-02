@@ -355,5 +355,79 @@ footer p{
     }
 }
 
+/* ===== AGREGADO: menú de usuario (Iniciar sesión / Registrarse) ===== */
 
+.user-menu {
+  position: relative;
+}
+
+.user-menu #menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: initial;
+  letter-spacing: normal;
+  text-transform: none;
+  outline: none;
+  transition: none;
+  overflow: visible;
+  width: auto;
+}
+
+.user-menu #menu:hover {
+  color: initial;
+  transform: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.user-menu #menu::before {
+  content: none;
+}
+
+#userMenuDropdown {
+  position: absolute;
+  top: 45px;
+  right: 0px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 200;
+}
+
+#userMenuDropdown.hidden {
+  display: none;
+}
+
+#userMenuDropdown button {
+  margin-bottom: 5px;
+  padding: 8px;
+  border: none;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  color: initial;
+  letter-spacing: normal;
+  text-transform: none;
+  outline: none;
+  transition: none;
+  overflow: visible;
+  width: 100%;
+}
+
+#userMenuDropdown button:hover {
+  color: initial;
+  transform: none;
+  outline: none;
+  box-shadow: none;
+  background-color: #e0e0e0;
+}
+
+#userMenuDropdown button::before {
+  content: none;
+}
 
