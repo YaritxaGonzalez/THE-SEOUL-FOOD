@@ -1,0 +1,78 @@
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;          /* Permite que los elementos bajen a la siguiente línea */
+    gap: 20px;                /* Espacio entre calugas */
+    justify-content: center;  /* Centra horizontalmente */
+}
+
+
+.button {
+    padding: 5px 10px;                 /* Espaciado interno: arriba/abajo 1em, izquierda/derecha 2em */
+    border: none;                     /* Elimina el borde por defecto */
+    border-radius: 5px;               /* Bordes redondeados */
+    font-weight: bold;                /* Texto en negrita */
+    letter-spacing: 5px;              /* Espaciado entre letras */
+    text-transform: uppercase;        /* Convierte el texto a mayúsculas */
+    cursor: pointer;                  /* Cambia el cursor a "mano" al pasar encima */
+    color: #7c5cff;                 /* Color inicial del texto */
+    transition: all 1000ms;           /* Transición suave de 1 segundo para todos los cambios */
+    font-size: 15px;                  /* Tamaño de fuente */
+    position: relative;               /* Necesario para posicionar el pseudo-elemento ::before dentro */
+    overflow: hidden;                 /* Oculta cualquier contenido que se salga del botón */
+    outline: 2px solid #2c9caf;      /* Contorno inicial del botón */
+    width: 150px;                       /* El botón se expande al ancho del contenedor */
+    box-sizing: border-box;            /* Incluye padding y borde dentro del ancho total */
+}
+
+button:hover {
+    color: #ffffff;                   /* Texto se vuelve blanco al hacer hover */
+    transform: scale(1.1);            /* El botón se agranda un poco (10%) */
+    outline: 2px solid #030108;       /* El contorno cambia a */
+    box-shadow: 4px 5px 17px -4px #7c5cff; /* Sombra morada alrededor */
+}
+
+button::before {
+    content: "";                      /* Crea un pseudo-elemento vacío */
+    position: absolute;               /* Se posiciona dentro del botón */
+    left: -50px;                      /* Empieza desplazado hacia la izquierda */
+    top: 0;                           /* Alineado arriba */
+    width: 0;                         /* Inicialmente no ocupa ancho */
+    height: 100%;                     /* Ocupa toda la altura del botón */
+    background-color: #7c5cff;        /* Color de fondo morado */
+    transform: skewX(45deg);          /* Se inclina en diagonal (efecto dinámico) */
+    z-index: -1;                      /* Se coloca detrás del texto del botón */
+    transition: width 1000ms;         /* La animación afecta solo al ancho */
+}
+
+button:hover::before {
+    width: 250%;                      /* Al hacer hover, el pseudo-elemento se expande mucho más allá del botón */
+}
+
+.caluga{
+    border: #000 solid;
+    width: clamp(15rem, 13.566rem + 10.038vw, 360rem);
+    height: clamp(15rem, 13.566rem + 10.038vw, 360rem);
+    flex-direction: column;
+    border-radius: 12px;
+    display: flex;
+    align-items: first center;
+    justify-content: center;
+    background-color: rgb(251, 255, 203);
+    
+}
+.caluga img {
+    max-width: 70%;  
+    max-height: 70%;
+}
+
+.nombre {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input {
+display: block;
+margin-bottom: 10px; /* espacio entre inputs */
+}
+
