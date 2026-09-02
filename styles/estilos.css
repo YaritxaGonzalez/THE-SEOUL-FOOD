@@ -3,19 +3,19 @@ body{
     padding: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
- 
+
 h1, h2, p {
     margin: 0;
     padding: 0;
 }
- 
+
 .no-select {
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
- 
+
 h1{
     font-size: clamp(1.5rem, 1.221rem + 1.176vw, 2.25rem);
     line-height: clamp(1.75rem, 1.471rem + 1.176vw, 2.5rem);
@@ -154,7 +154,7 @@ button:hover::before {
     width: clamp(15rem, 13.566rem + 10.038vw, 360rem);
     height: clamp(15rem, 13.566rem + 10.038vw, 360rem);
     flex-direction: column;
-
+}
 .caluga {
     border: 1px solid #000;
     width: 150px; 
@@ -184,6 +184,7 @@ margin-bottom: 10px; /* espacio entre inputs */
 footer{
     background-color: #1A1A1A;
     color: #fff;
+}
 
 .jp-matrix {
     position: fixed;
@@ -283,9 +284,11 @@ footer p{
         flex-direction: column;
         padding: 16px;
     }
+}
  
     header section:nth-child(2){
         gap: 16px;
+    }
 
 .jp-matrix > span:nth-child(19n + 2) {
     animation: smooth-pulse 3.5s ease-in-out infinite 0.2s;
