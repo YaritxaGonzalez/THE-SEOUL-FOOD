@@ -569,3 +569,10 @@ footer p {
 .mensaje-exito.hidden {
     display: none;
 }
+
+.btn-volver {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 16px;
+}
