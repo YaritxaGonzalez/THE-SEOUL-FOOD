@@ -66,6 +66,27 @@ function activarMenuUsuario(){
         window.location.href = "paginas/registrarse.html";
     };
 }
+
+function activarFormularioRegistro(){
+    var form = document.getElementById("formRegistro");
+    if (!form) return;
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        var nombre = document.getElementById("nombre");
+        var errorNombre = document.getElementById("errorNombre");
+        var soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}$/;
+
+        if (!soloLetras.test(nombre.value.trim())){
+            errorNombre.classList.remove("hidden");
+            nombre.focus();
+        } else {
+            errorNombre.classList.add("hidden");
+        }
+    });
+}
 inyectarHeader();
 inyectarFooter();
 inyectarMenuUsuario();
+activarFormularioRegistro();
