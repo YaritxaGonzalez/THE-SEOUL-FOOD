@@ -118,7 +118,7 @@ header a:hover {
 }
 
 #inicio p {
-    color: #444;
+    color: #f1f1f1;
 }
 
 .hero-box {
@@ -200,14 +200,14 @@ header a:hover {
     position: relative;
     overflow: hidden;
 
-    outline: 2px solid #2c9caf;
+    outline: 2px solid #0d46a1;
     transition: all 1s;
 }
 
 .button:hover {
     color: white;
     transform: scale(1.1);
-    outline: 2px solid #030108;
+    outline: 2px solid #cd0d0d;
     box-shadow: 4px 5px 17px -4px #dc2a2a;
 }
 
@@ -221,7 +221,7 @@ header a:hover {
     width: 0;
     height: 100%;
 
-    background-color: #e72121;
+    background-color: #000000;
     transform: skewX(45deg);
 
     z-index: -1;
