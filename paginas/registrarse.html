@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Seoul Food</title>
-    <link rel="stylesheet" href="styles/estilos.css">
-    <link rel="icon" type="image/png" href="imagenes/store-front.png">
+    <title>Registrarse - The Seoul Food</title>
+    <link rel="stylesheet" href="../styles/estilos.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </head>
 <body>
-
     <div class="jp-matrix">
         <span>ア</span><span>イ</span><span>ウ</span><span>エ</span><span>オ</span
         ><span>カ</span><span>キ</span><span>ク</span><span>ケ</span><span>コ</span
@@ -236,82 +234,28 @@
         ><span>ホ</span>
     </div>
 
-    <!-- Header inyectado -->
-    <header id="header"></header>
+    <section id="content">
+        <article class="form-card">
+            <h1>Crear cuenta</h1>
+            <p>Registrate para pedir tus ramyeon favoritos.</p>
 
-    <!-- Contenido principal -->
-    <main id="content">
+            <form id="formRegistro">
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
+                <span id="errorNombre" class="mensaje-error hidden">El nombre solo puede contener letras y espacios (mínimo 2 caracteres).</span>
 
-        <!-- Hero -->
-        <section id="inicio">
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="tel" placeholder="Teléfono" required>
+                <input type="password" placeholder="Contraseña" required>
+                <input type="password" placeholder="Confirmar contraseña" required>
 
-            <section class="hero-box">
-                <h1>The Seoul Food</h1>
-                <p>Los mejores ramyeon y snacks coreanos, directo a tu puerta.</p>
-            </section>
+                <button type="submit" class="btn-registro">Registrarse</button>            
+            </form>
+            <p id="mensajeExito" class="mensaje-exito hidden">✅ ¡Registro exitoso! Redirigiendo al inicio...</p>
+        </article>
+    </section>
 
-        </section>
-
-        <!-- Productos -->
-        <section id="productos">
-
-            <section class="hero-box">
-                <h2>Nuestros productos</h2>
-            </section>
-
-            <div class="contenedor">
-
-                <article class="caluga">
-                    <span class="nombre">또 다른 닭고기 수프</span>
-                    <img src="/imagenes/Nongshim-Chapagetti-Exp.webp" alt="Chapagetti">
-                    <span class="precio">Precio: Mucho caro</span>
-                    <button class="button">Agregar</button>
-                </article>
-
-                <article class="caluga">
-                    <span class="nombre">닭고기 수프</span>
-                    <img src="/imagenes/Nongshim-Sarigomtang-Ramyeon.webp" alt="Sarigomtang">
-                    <span class="precio">Precio: Mucho caro</span>
-                    <button class="button">Agregar</button>
-                </article>
-
-                <article class="caluga">
-                    <span class="nombre">닭고기 수프</span>
-                    <img src="/imagenes/Otoki-Jin-Veggie.webp" alt="Jin Veggie">
-                    <span class="precio">Precio: Mucho caro</span>
-                    <button class="button">Agregar</button>
-                </article>
-
-                <article class="caluga">
-                    <span class="nombre">닭고기 수프</span>
-                    <img src="/imagenes/Nongshim-Shin-Ramyeon-Ramyeon-1.webp" alt="Shin Ramyeon">
-                    <span class="precio">Precio: Mucho caro</span>
-                    <button class="button">Agregar</button>
-                </article>
-
-                <article class="caluga">
-                    <span class="nombre">닭고기 수프</span>
-                    <img src="/imagenes/Nongshim-Yukgaejang-Ramyeon.webp" alt="Yukgaejang">
-                    <span class="precio">Precio: Mucho caro</span>
-                    <button class="button">Agregar</button>
-                </article>
-
-                <article class="caluga">
-                    <span class="nombre">닭고기 수프</span>
-                    <img src="/imagenes/Ottogi-Fideos-de-Ramyeon.webp" alt="Ottogi">
-                    <span class="precio">Precio: Mucho caro</span>
-                    <button class="button">Agregar</button>
-                </article>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Footer inyectado -->
     <footer id="footer"></footer>
 
-    <script src="/scripts/scripts.js"></script>
-
+    <script src="scripts/scripts.js"></script>
 </body>
+</html>
