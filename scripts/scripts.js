@@ -86,7 +86,16 @@ function activarFormularioRegistro(){
         }
     });
 }
+function activarBotonVolver(){
+    var btnVolver = document.querySelector(".btn-volver");
+    if (!btnVolver) return;
+
+    btnVolver.addEventListener("click", function(){
+        window.location.href = base + "index.html";
+    });
+}
 inyectarHeader();
 inyectarFooter();
 inyectarMenuUsuario();
 activarFormularioRegistro();
+activarBotonVolver();

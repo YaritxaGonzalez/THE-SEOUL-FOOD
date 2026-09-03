@@ -570,9 +570,7 @@ footer p {
     display: none;
 }
 
-.btn-volver {
-    display: inline-block;
+
+.btn-registro.btn-volver {
     text-decoration: none;
-    text-align: center;
-    margin-bottom: 16px;
 }
