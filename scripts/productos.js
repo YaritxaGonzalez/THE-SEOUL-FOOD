@@ -23,6 +23,10 @@ function mostrarProducto(){
     document.getElementById("productoNombre").textContent = producto.nombre;
     document.getElementById("productoDescripcion").textContent = producto.descripcion;
     document.getElementById("productoPrecio").textContent = "Precio: $" + producto.precio.toLocaleString("es-CL");
+
+    // Para saber qué producto se está agregando
+    var btnAgregar = document.getElementById("btnAgregarDetalle");
+    if (btnAgregar) btnAgregar.dataset.id = producto.id;
 }
 
 mostrarProducto();

@@ -20,6 +20,24 @@ function inyectarHeader(){
             <a href="#productos">Productos</a>
             <a href="#footer">Contacto</a>
         </section>
+
+    
+        <button type="button" id="carritoIcono" class="carrito-icono" aria-label="Ver carrito">
+            <i class='bx bx-cart'></i>
+            <span id="carritoContador" class="carrito-badge">0</span>
+        </button>
+
+        <aside id="carritoPanel" class="carrito-panel">
+            <div class="carrito-panel-header">
+                <h2>Mi carrito</h2>
+                <button type="button" id="carritoCerrar" class="carrito-cerrar" aria-label="Cerrar carrito">✕</button>
+            </div>
+            <div id="carritoItems" class="carrito-items"></div>
+            <div class="carrito-panel-footer">
+                <span>Total:</span>
+                <span id="carritoTotal">$0</span>
+            </div>
+        </aside>
     `;
 }
 inyectarHeader();
