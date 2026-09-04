@@ -96,6 +96,7 @@ function activarBotonVolver(){
 }
 inyectarHeader();
 inyectarFooter();
+
 inyectarMenuUsuario();
 activarFormularioRegistro();
 activarBotonVolver();
