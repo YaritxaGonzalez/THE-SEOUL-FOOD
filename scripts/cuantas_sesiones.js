@@ -1,6 +1,51 @@
 // ==========================================
 // AGREGADO: login con redirección según rol
 // ==========================================
+function inyectarMenuUsuario(){
+    var header = document.getElementById("header");
+
+    header.insertAdjacentHTML("beforeend", `
+        <div class="user-menu">
+            <button id="menu">
+                <box-icon type='solid' name='user' color="#fff"></box-icon>
+            </button>
+            <div id="userMenuDropdown" class="hidden">
+                <button id="iniciarSesion">Iniciar sesión</button>
+                <button id="registrase">Registrarse</button>
+            </div>
+        </div>
+    `);
+
+    activarMenuUsuario();
+}
+
+// ==========================================
+// FALTABA: esta función es la que hace que el
+// cuadrado aparezca/desaparezca al hacer clic
+// ==========================================
+function activarMenuUsuario(){
+    var menu = document.getElementById("menu");
+    var userMenuDropdown = document.getElementById("userMenuDropdown");
+    var iniciarSesion = document.getElementById("iniciarSesion");
+    var registrase = document.getElementById("registrase");
+
+    menu.onclick = function () {
+        if (userMenuDropdown.classList.contains("hidden")) {
+            userMenuDropdown.classList.remove("hidden");
+        } else {
+            userMenuDropdown.classList.add("hidden");
+        }
+    };
+
+    iniciarSesion.onclick = function () {
+        window.location.href = "paginas/inicio_sesion.html";
+    };
+
+    registrase.onclick = function () {
+        window.location.href = "paginas/registrarse.html";
+    };
+}
+
 function activarFormularioLogin(){
     var form = document.getElementById("formLogin");
     if (!form) return;
@@ -93,13 +138,6 @@ function activarBotonVolver(){
     });
 }
 
-// ==========================================
-// Llamadas al cargar el script (como ya lo tenías)
-// ==========================================
-inyectarHeader();
-inyectarMenuUsuario();
-inyectarFooter();
-
 // Estas dependen de elementos que solo existen en ciertas páginas,
 // así que se ejecutan aparte cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", function(){
@@ -112,3 +150,8 @@ document.addEventListener("DOMContentLoaded", function(){
         protegerPaginaAdmin();
     }
 });
+
+// ==========================================
+inyectarHeader();
+inyectarMenuUsuario();
+inyectarFooter();
