@@ -485,3 +485,16 @@ footer p {
     align-items: center;
     gap: 6px;
 }
+
+.link-secundario a {
+    color: #c0392b; /* rojo - ajusta el tono que prefieras */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-secundario a:hover {
+    text-decoration: underline;
+}
+.link-secundario {
+    margin-top: 20px; /* ajusta el valor a tu gusto: 30px, 40px, etc. */
+}
