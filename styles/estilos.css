@@ -570,18 +570,14 @@ footer p {
     display: none;
 }
 
-
-.btn-registro.btn-volver {
-    text-decoration: none;
-}
-
 .link-secundario {
     margin-top: 16px;
     font-size: 14px;
     color: #444;
 }
 
-.link-secundario a {
+.link-secundario a,
+.link-secundario a:visited {
     color: #C8102E;
     font-weight: bold;
     text-decoration: none;
