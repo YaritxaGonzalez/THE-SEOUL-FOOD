@@ -1,0 +1,77 @@
+/* ================================
+   CARRUSEL
+   ================================ */
+
+#carrusel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    scroll-margin-top: 100px;
+}
+
+.carrusel-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carrusel-container span {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.carrusel-track {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.carrusel-track div {
+    width: 10%;
+    height: 350px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    transition: width 0.3s;
+}
+
+.carrusel-track .a {
+    width: 50%;
+}
+
+.one { background-color: #3d5a80; }
+.two { background-color: #98c1d9; }
+.three { background-color: #e0fbfc; }
+.four { background-color: #ee6c4d; }
+.five { background-color: #293241; }
+
+.slide {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.slide li {
+    padding: 10px;
+    border: 2px solid #1c1c1c;
+    border-radius: 50%;
+    margin-right: 0.8em;
+    cursor: pointer;
+}
+
+.slide li:last-child {
+    margin-right: 0;
+}
+
+.slide li.b {
+    background-color: #1c1c1c;
+}
