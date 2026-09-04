@@ -498,3 +498,156 @@ footer p {
 .link-secundario {
     margin-top: 20px; /* ajusta el valor a tu gusto: 30px, 40px, etc. */
 }
+
+/* ==================================
+   CARRITO DE COMPRAS
+   ================================== */
+
+.carrito-icono {
+    position: relative;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.carrito-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #C8102E;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+.carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    width: 320px;
+    max-width: 90vw;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0 14px rgba(0, 0, 0, 0.25);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+
+.carrito-panel.abierto {
+    right: 0;
+}
+
+.carrito-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1A1A1A;
+    color: white;
+    padding: 16px;
+}
+
+.carrito-panel-header h2 {
+    font-size: 18px;
+}
+
+.carrito-cerrar {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.carrito-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 16px;
+}
+
+.carrito-vacio {
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.carrito-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.carrito-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-item-nombre {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.carrito-item-precio {
+    font-size: 12px;
+    color: #555;
+}
+
+.carrito-panel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 5px;
+    border: none;
+    outline: 2px solid #0d46a1;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.qty-btn:hover {
+    outline: 2px solid #cd0d0d;
+    color: #cd0d0d;
+}
+
+.qty-valor {
+    min-width: 18px;
+    text-align: center;
+    font-weight: bold;
+}
