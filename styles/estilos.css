@@ -177,6 +177,10 @@ header a:hover {
 .nombre {
     font-size: 15px;
     font-weight: bold;
+    text-align: center;
+    width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 /* ==================================

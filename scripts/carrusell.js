@@ -1,59 +1,44 @@
 $(function () {
 
+    const $slides = $('.carrusel-slide');
+    const $dots = $('.slide li');
     let i = 0;
-    function change() {
-        ++i;
-        $($(".carrusel-track div")[i - 1]).animate({ width: "10%" }, 0.01).removeClass("a");
-        $($('.slide li')[i - 1]).removeClass("b");
-        if (i == 5) {
-            i = 0;
-        }
-        $($(".carrusel-track div")[i]).animate({ width: "50%" }).addClass("a");
-        $($('.slide li')[i]).addClass("b");
-    }
-    var a = setInterval(change, 2000);
 
-    let j = 0;
-    $('.carrusel-track div').click(function () {
-        clearInterval(a);
-        j = $(this).index();
-        if ($(this).hasClass("a")) { }
-        else {
-            $('.carrusel-track div').animate({ width: "10%" }, 0.5).removeClass('a');
-            $('.slide li').removeClass('b');
-            $(this).animate({ width: "50%" }, 200).addClass('a');
-            $($('.slide li')[$(this).index()]).addClass('b');
-        }
+    function goTo(index) {
+        $slides.eq(i).removeClass('a');
+        $dots.eq(i).removeClass('b');
+        i = (index + $slides.length) % $slides.length;
+        $slides.eq(i).addClass('a');
+        $dots.eq(i).addClass('b');
+    }
+
+    let auto = setInterval(() => goTo(i + 1), 2500);
+    function resetAuto() {
+        clearInterval(auto);
+        auto = setInterval(() => goTo(i + 1), 2500);
+    }
+
+    $dots.on('click', function () {
+        goTo($dots.index(this));
+        resetAuto();
     });
 
-    $('.carrusel-container span').click(function () {
-        clearInterval(a);
-        j = $('.carrusel-track .a').index();
-        if (j == 0 && $(this).hasClass('prev')) {
-            $($('.carrusel-track div')[0]).animate({ width: "10%" }, 0.01).removeClass("a");
-            $($('.slide li')[0]).removeClass("b");
-            $($('.carrusel-track div')[4]).animate({ width: "50%" }, 200).addClass("a");
-            $($('.slide li')[4]).addClass("b");
-        }
-        else if (j == 4 && $(this).hasClass('next')) {
-            $($('.carrusel-track div')[4]).animate({ width: "10%" }, 0.01).removeClass("a");
-            $($('.slide li')[4]).removeClass("b");
-            $($('.carrusel-track div')[0]).animate({ width: "50%" }, 200).addClass("a");
-            $($('.slide li')[0]).addClass("b");
-        }
-        else {
-            if ($(this).hasClass("prev")) {
-                $($('.carrusel-track div')[j]).animate({ width: "10%" }, 0.01).removeClass("a");
-                $($('.slide li')[j]).removeClass("b");
-                $($('.carrusel-track div')[j - 1]).animate({ width: "50%" }, 200).addClass("a");
-                $($('.slide li')[j - 1]).addClass("b");
-            }
-            else {
-                $($('.carrusel-track div')[j]).animate({ width: "10%" }, 0.01).removeClass("a");
-                $($('.slide li')[j]).removeClass("b");
-                $($('.carrusel-track div')[j + 1]).animate({ width: "50%" }, 200).addClass("a");
-                $($('.slide li')[j + 1]).addClass("b");
-            }
+    $('.carrusel-container .prev').on('click', function () {
+        goTo(i - 1);
+        resetAuto();
+    });
+
+    $('.carrusel-container .next').on('click', function () {
+        goTo(i + 1);
+        resetAuto();
+    });
+
+    $slides.on('click', function (e) {
+        const index = $slides.index(this);
+        if (index !== i) {
+            e.preventDefault();
+            goTo(index);
+            resetAuto();
         }
     });
 
