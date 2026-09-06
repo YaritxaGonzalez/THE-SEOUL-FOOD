@@ -1,13 +1,27 @@
 const PRODUCTOS = [
-    { id: "chapagetti",    nombre: "Nongshim Chapagetti",     imagen: "imagenes/Nongshim-Chapagetti-Exp.webp",              precio: 3990, descripcion: "Fideos estilo jjajangmyeon con salsa de pasta de soja negra." },
-    { id: "sarigomtang",   nombre: "Nongshim Sarigomtang",    imagen: "imagenes/Nongshim-Sarigomtang-Ramyeon.webp",         precio: 3990, descripcion: "Ramyeon con sabor a caldo de huesos, suave y reconfortante." },
-    { id: "jin-veggie",    nombre: "Ottogi Jin Veggie",       imagen: "imagenes/Otoki-Jin-Veggie.webp",                     precio: 3790, descripcion: "Versión vegetariana del clásico Jin Ramyeon." },
-    { id: "shin-ramyeon",  nombre: "Nongshim Shin Ramyeon",   imagen: "imagenes/Nongshim-Shin-Ramyeon-Ramyeon-1.webp",      precio: 3990, descripcion: "El ramyeon picante más icónico de Corea." },
-    { id: "yukgaejang",    nombre: "Nongshim Yukgaejang",     imagen: "imagenes/Nongshim-Yukgaejang-Ramyeon.webp",          precio: 3990, descripcion: "Sabor a sopa picante de res deshebrada." },
-    { id: "ottogi-fideos", nombre: "Ottogi Ramyeon",          imagen: "imagenes/Ottogi-Fideos-de-Ramyeon.webp",             precio: 3790, descripcion: "Fideos clásicos estilo Ottogi." }
+    { id: "01", nombre: "Nongshim Chapagetti",              imagen: "imagenes/Nongshim-Chapagetti-Exp.webp",                precio: 3990, descripcion: "Fideos estilo jjajangmyeon con salsa de pasta de soja negra.",   stock: 10 },
+    { id: "02", nombre: "Nongshim Sarigomtang",             imagen: "imagenes/Nongshim-Sarigomtang-Ramyeon.webp",           precio: 3990, descripcion: "Ramyeon con sabor a caldo de huesos, suave y reconfortante.",    stock: 10 },
+    { id: "03", nombre: "Ottogi Jin Veggie",                imagen: "imagenes/Otoki-Jin-Veggie.webp",                       precio: 3790, descripcion: "Versión vegetariana del clásico Jin Ramyeon.",                   stock: 10 },
+    { id: "04", nombre: "Ottogi Jin Veggie",                imagen: "imagenes/Otoki-Jin-Veggie.webp",                       precio: 3790, descripcion: "Versión vegetariana del clásico Jin Ramyeon.",                   stock: 10 },
+    { id: "05", nombre: "Nongshim Shin Ramyeon",            imagen: "imagenes/Nongshim-Shin-Ramyeon-Ramyeon-1.webp",        precio: 3990, descripcion: "El ramyeon picante más icónico de Corea.",                       stock: 10 },
+    { id: "06", nombre: "Nongshim Yukgaejang",              imagen: "imagenes/Nongshim-Yukgaejang-Ramyeon.webp",            precio: 3990, descripcion: "Sabor a sopa picante de res deshebrada.",                        stock: 10 },
+    { id: "07", nombre: "Ottogi Ramyeon",                   imagen: "imagenes/Ottogi-Fideos-de-Ramyeon.webp",               precio: 3790, descripcion: "Fideos clásicos estilo Ottogi.",                                 stock: 10 },
+    { id: "08", nombre: "Ottogi Jin Ramyeon Chicken",       imagen: "imagenes/Ottogi-Jin-Ramyeon-Chicken-1-1024x946.webp",  precio: 3790, descripcion: "Ramyeon con sabor a pollo, suave y aromático.",                  stock: 10 },
+    { id: "09", nombre: "Ottogi Jin Ramyeon Spicy",         imagen: "imagenes/Ottogi-Jin-Ramyeon-Spicy-BTS.webp",           precio: 3790, descripcion: "Versión picante del clásico Jin Ramyeon.",                       stock: 10 },
+    { id: "10", nombre: "Ottogi Kimchi Ramyeon",            imagen: "imagenes/Ottogi-Kimchi-Ramyeon.webp",                  precio: 3790, descripcion: "Ramyeon con sabor a kimchi fermentado.",                         stock: 10 },
+    { id: "11", nombre: "Sachun Chapagetti",                imagen: "imagenes/Sachun-chapagetti.webp",                      precio: 3690, descripcion: "Fideos estilo jjajangmyeon, alternativa a Chapagetti.",          stock: 10 },
+    { id: "12", nombre: "Samyang Buldak Bokkeum Myeon",     imagen: "imagenes/Samyang-Buldak-Bokkeum-Myeon-Ramyeon-1.webp", precio: 4290, descripcion: "El clásico ramyeon extra picante Buldak.",                       stock: 10 },
+    { id: "13", nombre: "Samyang Buldak Quattro Cheese",    imagen: "imagenes/Samyang-Buldak-Quattro-Cheese.webp",          precio: 4390, descripcion: "Buldak picante con mezcla de cuatro quesos.",                    stock: 10 },
+    { id: "14", nombre: "Samyang Cheese Buldak",            imagen: "imagenes/Samyang-Cheese-Buldak-Ramyeon.webp",          precio: 4290, descripcion: "Buldak picante con un toque cremoso de queso.",                  stock: 10 },
+    { id: "15", nombre: "Samyang Cream Carbo Buldak",       imagen: "imagenes/Samyang-Cream-Carbo-Buldak-Ramyeon.webp",     precio: 4390, descripcion: "Versión carbonara cremosa del Buldak picante.",                  stock: 10 },
+    { id: "16", nombre: "Samyang Hek Buldak Bokkeum Myeon", imagen: "imagenes/Samyang-Hek-Buldak-Bokkeum-Myeon-1.webp",     precio: 4290, descripcion: "Buldak picante edición Hek, sabor intenso.",                     stock: 10 },
+    { id: "17", nombre: "Samyang Suegogui Myeon",           imagen: "imagenes/Samyang-Suegogui-Myeon.webp",                 precio: 3990, descripcion: "Ramyeon con sabor a carne de res.",                              stock: 0 },
 ];
 
 function mostrarProducto(){
+
+    if (!document.getElementById("detalleProducto")) return;
+    
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
