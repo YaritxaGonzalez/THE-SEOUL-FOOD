@@ -22,10 +22,12 @@ function inyectarHeader(){
         </section>
 
     
-        <button type="button" id="carritoIcono" class="carrito-icono" aria-label="Ver carrito">
-            <i class='bx bx-cart'></i>
-            <span id="carritoContador" class="carrito-badge">0</span>
-        </button>
+        <div class="header-controls">
+            <button type="button" id="carritoIcono" class="carrito-icono" aria-label="Ver carrito">
+                <i class='bx bx-cart'></i>
+                <span id="carritoContador" class="carrito-badge">0</span>
+            </button>
+        </div>
 
         <aside id="carritoPanel" class="carrito-panel">
             <div class="carrito-panel-header">
@@ -42,4 +44,3 @@ function inyectarHeader(){
 }
 inyectarHeader();
 inyectarFooter();
-

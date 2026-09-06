@@ -688,3 +688,9 @@ footer p {
     height: 100%;
     border-radius: 12px;     /* esquinas redondeadas opcionales */
 }
+
+.header-controls{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
