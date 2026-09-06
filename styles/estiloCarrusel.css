@@ -1,5 +1,5 @@
 /* ================================
-   CARRUSEL
+   CARRUSEL - una imagen a la vez
    ================================ */
 
 #carrusel {
@@ -15,41 +15,52 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    width: 80%;
+    width: 90%;
+    max-width: 480px;
     margin: 0 auto;
 }
 
 .carrusel-container span {
     font-size: 2em;
     cursor: pointer;
+    color: #4e13d7;
+    text-shadow: 0 0 8px #3e0ce1, 0 0 18px #4013d3;
+    transition: transform 0.2s;
+}
+
+.carrusel-container span:hover {
+    transform: scale(1.15);
 }
 
 .carrusel-track {
+    position: relative;
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    aspect-ratio: 1 / 1;
+    background: transparent;
 }
 
-.carrusel-track div {
-    width: 10%;
-    height: 350px;
-    border-radius: 50px;
-    cursor: pointer;
-    background-size: cover;
+.carrusel-slide {
+    position: absolute;
+    inset: 0;
+    display: block;
+    border-radius: 30px;
+    background-color: transparent;
+    background-size: contain;      /* fondo transparente, no recorta la imagen */
+    background-repeat: no-repeat;
     background-position: center;
-    transition: width 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    cursor: pointer;
 }
 
-.carrusel-track .a {
-    width: 50%;
+.carrusel-slide.a {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px #4f0ad9) drop-shadow(0 0 35px #00eaff66);
 }
-
-.one { background-color: #3d5a80; }
-.two { background-color: #98c1d9; }
-.three { background-color: #e0fbfc; }
-.four { background-color: #ee6c4d; }
-.five { background-color: #293241; }
 
 .slide {
     list-style: none;
@@ -61,17 +72,17 @@
 }
 
 .slide li {
-    padding: 10px;
-    border: 2px solid #1c1c1c;
+    padding: 6px;
+    border: 2px solid #0e06f7;
     border-radius: 50%;
     margin-right: 0.8em;
     cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.slide li:last-child {
-    margin-right: 0;
-}
+.slide li:last-child { margin-right: 0; }
 
 .slide li.b {
-    background-color: #1c1c1c;
+    background-color: #de2110;
+    box-shadow: 0 0 10px #3c0cdb;
 }
