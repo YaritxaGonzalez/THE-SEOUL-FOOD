@@ -12,7 +12,7 @@ function pintarProductos(){
                     <img src="${producto.imagen}" alt="${producto.nombre}">
                 </a>
                 <span class="precio">Precio: $${producto.precio.toLocaleString("es-CL")}</span>
-                <button class="button producto-control" data-id="${producto.id}">Agregar</button>
+                <button class="button producto-control" data-id="${producto.id}" ${producto.stock === 0 ? 'disabled' : ''}>Agregar</button>
             </article>
         `;
     });

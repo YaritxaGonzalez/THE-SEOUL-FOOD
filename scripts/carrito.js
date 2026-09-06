@@ -156,14 +156,20 @@ function inicializarCarrito(){
     document.addEventListener("click", function(e){
 
         // Primer clic en "agregar": lo convierte en el control +/-
-        var btnAgregar = e.target.closest(".button.producto-control[data-id]");
-        if (btnAgregar){
-            var idAgregar = btnAgregar.dataset.id;
-            var nuevaCantidad = obtenerCantidadProducto(idAgregar) + 1;
-            setCantidadProducto(idAgregar, nuevaCantidad);
-            mostrarControlCantidad(btnAgregar, idAgregar, nuevaCantidad);
-            return;
-        }
+var btnAgregar = e.target.closest(".button.producto-control[data-id]");
+if (btnAgregar){
+    var idAgregar = btnAgregar.dataset.id;
+    var productoAgregar = PRODUCTOS.find(function(p){ return p.id === idAgregar; });
+    var nuevaCantidad = obtenerCantidadProducto(idAgregar) + 1;
+
+    if (!productoAgregar || nuevaCantidad > productoAgregar.stock){
+        return;
+    }
+
+    setCantidadProducto(idAgregar, nuevaCantidad);
+    mostrarControlCantidad(btnAgregar, idAgregar, nuevaCantidad);
+    return;
+}
 
         // Clic en "+" o "-" 
         var btnMas = e.target.closest(".qty-mas");
@@ -173,6 +179,13 @@ function inicializarCarrito(){
             var id = control.dataset.id;
             var cantidadActual = obtenerCantidadProducto(id);
             var cantidadNueva = btnMas ? cantidadActual + 1 : cantidadActual - 1;
+
+        if (btnMas){
+        var productoControl = PRODUCTOS.find(function(p){ return p.id === id; });
+        if (!productoControl || cantidadNueva > productoControl.stock){
+            return;
+        }
+    }
 
             setCantidadProducto(id, cantidadNueva);
             sincronizarControlProducto(id);
