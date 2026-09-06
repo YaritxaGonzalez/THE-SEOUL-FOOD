@@ -1,10 +1,12 @@
+1
 // ==========================================
 // AGREGADO: login con redirección según rol
 // ==========================================
 function inyectarMenuUsuario(){
-    var header = document.getElementById("header");
+    var controles = document.querySelector(".header-controls");
+    if (!controles) return;
 
-    header.insertAdjacentHTML("beforeend", `
+    controles.insertAdjacentHTML("beforeend", `
         <div class="user-menu">
             <button id="menu">
                 <box-icon type='solid' name='user' color="#fff"></box-icon>
@@ -38,12 +40,23 @@ function activarMenuUsuario(){
     };
 
     iniciarSesion.onclick = function () {
-        window.location.href = "paginas/inicio_sesion.html";
+        window.location.href = "/paginas/inicio_sesion.html";
     };
 
     registrase.onclick = function () {
-        window.location.href = "paginas/registrarse.html";
+        window.location.href = "/paginas/registrarse.html";
     };
+}
+
+// ==========================================
+// Credenciales de usuarios (admin fijo + registrados)
+// ==========================================
+function obtenerUsuarios(){
+    var base = [
+        { user: "admin@theseoulfood.cl", pass: "SoulFood2026Adm!", rol: "admin" }
+    ];
+    var registrados = JSON.parse(localStorage.getItem("usuariosRegistrados")) || [];
+    return base.concat(registrados);
 }
 
 function activarFormularioLogin(){
@@ -63,13 +76,59 @@ function activarFormularioLogin(){
             localStorage.setItem("userActual", encontrado.user);
 
             if (encontrado.rol === "admin"){
-                window.location.href = "administracion.html"; // ajusta ruta real
+                window.location.href = "administrador.html";
             } else {
                 window.location.href = "../index.html";
             }
         } else {
             alert("Usuario o contraseña incorrectos");
         }
+    });
+}
+
+// ==========================================
+// Registro (guarda usuarios nuevos como "cliente")
+// ==========================================
+function activarFormularioRegistro(){
+    var form = document.getElementById("formRegistro");
+    if (!form) return;
+
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        var nombre = document.getElementById("nombre").value.trim();
+        var correo = document.getElementById("correo").value.trim().toLowerCase();
+        var telefono = document.getElementById("telefono").value.trim();
+        var pass = document.getElementById("pass").value;
+        var confirmarPass = document.getElementById("confirmarPass").value;
+        var errorNombre = document.getElementById("errorNombre");
+
+        var soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+(\s[A-Za-zÁÉÍÓÚáéíóúÑñ]+)*$/;
+        if (!soloLetras.test(nombre)){
+            errorNombre.classList.remove("hidden");
+            return;
+        } else {
+            errorNombre.classList.add("hidden");
+        }
+
+        if (pass !== confirmarPass){
+            alert("Las contraseñas no coinciden");
+            return;
+        }
+
+        if (obtenerUsuarios().some(u => u.user === correo)){
+            alert("Ya existe una cuenta registrada con ese correo");
+            return;
+        }
+
+        var registrados = JSON.parse(localStorage.getItem("usuariosRegistrados")) || [];
+        registrados.push({ user: correo, pass: pass, rol: "cliente", nombre: nombre, telefono: telefono });
+        localStorage.setItem("usuariosRegistrados", JSON.stringify(registrados));
+
+        document.getElementById("mensajeExito").classList.remove("hidden");
+        setTimeout(function(){
+            window.location.href = "../index.html";
+        }, 1500);
     });
 }
 
@@ -146,12 +205,12 @@ document.addEventListener("DOMContentLoaded", function(){
     activarBotonVolver();
     renderizarProductos();
 
-    if (window.location.pathname.includes("administracion.html")){
+    if (window.location.pathname.includes("administrador.html")){
         protegerPaginaAdmin();
     }
 });
 
 // ==========================================
-inyectarHeader();
+// inyectarHeader() e inyectarFooter() ya las ejecuta scripts.js;
+// aquí solo agregamos el menú de usuario al header ya existente.
 inyectarMenuUsuario();
-inyectarFooter();

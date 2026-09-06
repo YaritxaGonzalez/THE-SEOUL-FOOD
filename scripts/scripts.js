@@ -1,7 +1,7 @@
 function inyectarFooter(){
     document.getElementById("footer").innerHTML = `
         <div class="footer-brand">
-            <img src="../imagenes/store-front.png" alt="Logo The Seoul Food">
+            <img src="/imagenes/store-front.png" alt="Logo The Seoul Food">
             <span>The Seoul Food</span>
         </div>
         <p>📧 contacto@theseoulfood.cl · 📍 Envíos a todo Chile</p>
@@ -12,20 +12,22 @@ function inyectarFooter(){
 function inyectarHeader(){
     document.getElementById("header").innerHTML = `
         <section class="header-brand">
-            <img src="../imagenes/store-front.png" alt="Logo The Seoul Food">
+            <img src="/imagenes/store-front.png" alt="Logo The Seoul Food">
             <h1 class="no-select">The Seoul Food</h1>
         </section>
         <section>
-            <a href="#inicio">Inicio</a>
+            <a href="/index.html#inicio">Inicio</a>
             <a href="#productos">Productos</a>
             <a href="#footer">Contacto</a>
         </section>
 
     
-        <button type="button" id="carritoIcono" class="carrito-icono" aria-label="Ver carrito">
-            <i class='bx bx-cart'></i>
-            <span id="carritoContador" class="carrito-badge">0</span>
-        </button>
+        <div class="header-controls">
+            <button type="button" id="carritoIcono" class="carrito-icono" aria-label="Ver carrito">
+                <i class='bx bx-cart'></i>
+                <span id="carritoContador" class="carrito-badge">0</span>
+            </button>
+        </div>
 
         <aside id="carritoPanel" class="carrito-panel">
             <div class="carrito-panel-header">
@@ -42,4 +44,3 @@ function inyectarHeader(){
 }
 inyectarHeader();
 inyectarFooter();
-
