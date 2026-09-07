@@ -40,11 +40,11 @@ function activarMenuUsuario(){
     };
 
     iniciarSesion.onclick = function () {
-        window.location.href = "../paginas/inicio_sesion.html";
+        window.location.href = "paginas/inicio_sesion.html";
     };
 
     registrase.onclick = function () {
-        window.location.href = "../paginas/registrarse.html";
+        window.location.href = "paginas/registrarse.html";
     };
 }
 
