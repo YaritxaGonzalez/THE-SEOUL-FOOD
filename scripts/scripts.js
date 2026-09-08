@@ -16,7 +16,7 @@ function inyectarHeader(){
             <h1 class="no-select">The Seoul Food</h1>
         </section>
         <section>
-            <a href="/index.html#inicio">Inicio</a>
+            <a href="index.html#inicio">Inicio</a>
             <a href="#productos">Productos</a>
             <a href="#footer">Contacto</a>
         </section>
