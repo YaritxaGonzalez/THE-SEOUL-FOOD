@@ -3,35 +3,35 @@
    ================================== */
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0;                     /* Elimina márgenes por defecto */
+    padding: 0;                    /* Elimina relleno por defecto */
     font-family: system-ui, -apple-system, BlinkMacSystemFont,
         'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-        'Open Sans', 'Helvetica Neue', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+        'Open Sans', 'Helvetica Neue', sans-serif; /* Tipografía moderna y multiplataforma */
+    min-height: 100vh;             /* Ocupa toda la altura de la ventana */
+    display: flex;                 /* Usa flexbox para organizar el layout */
+    flex-direction: column;        /* Los hijos se apilan en columna */
 }
 
 h1,
 h2,
 p {
-    margin: 0;
-    padding: 0;
+    margin: 0;                     /* Quita márgenes por defecto */
+    padding: 0;                    /* Quita relleno por defecto */
 }
 
 .no-select {
-    user-select: none;
+    user-select: none;             /* Evita que el usuario seleccione texto */
 }
 
 h1 {
-    font-size: clamp(1.5rem, 1.221rem + 1.176vw, 2.25rem);
-    line-height: clamp(1.75rem, 1.471rem + 1.176vw, 2.5rem);
+    font-size: clamp(1.5rem, 1.221rem + 1.176vw, 2.25rem); /* Tamaño fluido según ancho de pantalla */
+    line-height: clamp(1.75rem, 1.471rem + 1.176vw, 2.5rem); /* Altura de línea fluida */
 }
 
 h2 {
-    font-size: clamp(1rem, 0.721rem + 1.176vw, 1.75rem);
-    line-height: clamp(1.25rem, 0.971rem + 1.176vw, 2rem);
+    font-size: clamp(1rem, 0.721rem + 1.176vw, 1.75rem);   /* Tamaño fluido */
+    line-height: clamp(1.25rem, 0.971rem + 1.176vw, 2rem); /* Altura de línea fluida */
 }
 
 /* ==================================
@@ -39,11 +39,11 @@ h2 {
    ================================== */
 
 #content {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    padding: 40px 16px;
-    flex-grow: 1;
+    display: flex;                 /* Flexbox para organizar secciones */
+    flex-direction: column;        /* Se apilan en columna */
+    gap: 60px;                     /* Espacio entre secciones */
+    padding: 40px 16px;            /* Relleno interno */
+    flex-grow: 1;                  /* Se expande para ocupar espacio disponible */
 }
 
 /* ==================================
@@ -51,52 +51,52 @@ h2 {
    ================================== */
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #1A1A1A;
-    padding: 20px 16px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    flex-wrap: wrap;
-    gap: 12px;
+    display: flex;                 /* Flexbox para organizar elementos */
+    align-items: center;           /* Centra verticalmente */
+    justify-content: space-evenly; /* Distribuye elementos con espacio uniforme */
+    background-color: #1A1A1A;     /* Fondo oscuro */
+    padding: 20px 16px;            /* Relleno interno */
+    position: sticky;              /* Se mantiene fijo arriba al hacer scroll */
+    top: 0;                        /* Pegado al borde superior */
+    z-index: 100;                  /* Se asegura de estar encima de otros elementos */
+    flex-wrap: wrap;               /* Permite que los elementos bajen si no caben */
+    gap: 12px;                     /* Espacio entre elementos */
 }
 
 header h1 {
-    color: white;
-    letter-spacing: 1px;
+    color: white;                  /* Texto blanco */
+    letter-spacing: 1px;           /* Espaciado entre letras */
 }
 
 .header-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display: flex;                 /* Agrupa logo + nombre */
+    align-items: center;           /* Centra verticalmente */
+    gap: 12px;                     /* Espacio entre logo y texto */
 }
 
 .header-brand img {
-    width: 44px;
+    width: 44px;                   /* Tamaño fijo del logo */
     height: 44px;
-    border-radius: 6px;
-    object-fit: cover;
+    border-radius: 6px;            /* Bordes redondeados */
+    object-fit: cover;             /* Ajusta imagen sin deformarla */
 }
 
 header section:nth-child(2) {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex;                 /* Bloque de enlaces */
+    gap: 24px;                     /* Espacio entre enlaces */
+    flex-wrap: wrap;               /* Se adaptan si no caben */
+    justify-content: center;       /* Centrado horizontal */
 }
 
 header a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.2s;
+    text-decoration: none;         /* Sin subrayado */
+    color: white;                  /* Texto blanco */
+    font-weight: 500;              /* Peso medio */
+    transition: color 0.2s;        /* Animación suave al hover */
 }
 
 header a:hover {
-    color: #C8102E;
+    color: #C8102E;                /* Cambia a rojo al pasar el mouse */
 }
 
 /* ==================================
@@ -104,31 +104,31 @@ header a:hover {
    ================================== */
 
 #inicio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    scroll-margin-top: 100px;
+    display: flex;                 /* Flexbox */
+    flex-direction: column;        /* Elementos en columna */
+    align-items: center;           /* Centrado horizontal */
+    text-align: center;            /* Texto centrado */
+    gap: 12px;                     /* Espacio entre elementos */
+    scroll-margin-top: 100px;      /* Ajuste al hacer scroll */
 }
 
 #inicio img {
-    width: clamp(18.75rem, 7.108rem + 49.02vw, 50rem);
-    border-radius: 8px;
+    width: clamp(18.75rem, 7.108rem + 49.02vw, 50rem); /* Imagen responsiva */
+    border-radius: 8px;            /* Bordes redondeados */
 }
 
 #inicio p {
-    color: #f1f1f1;
+    color: #f1f1f1;                /* Texto gris claro */
 }
 
 .hero-box {
-    background: rgba(26, 26, 26, 0.85);
-    color: white;
-    border: 2px solid #C8102E;
-    border-radius: 15px;
-    padding: 25px;
-    width: min(800px, 90%);
-    text-align: center;
+    background: rgba(26, 26, 26, 0.85); /* Fondo oscuro semitransparente */
+    color: white;                  /* Texto blanco */
+    border: 2px solid #C8102E;     /* Borde rojo */
+    border-radius: 15px;           /* Bordes redondeados */
+    padding: 25px;                 /* Relleno interno */
+    width: min(800px, 90%);        /* Máximo 800px o 90% del ancho */
+    text-align: center;            /* Texto centrado */
 }
 
 /* ==================================
@@ -136,51 +136,51 @@ header a:hover {
    ================================== */
 
 #productos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    scroll-margin-top: 100px;
+    display: flex;                 /* Sección organizada con flexbox */
+    flex-direction: column;        /* Elementos en columna */
+    align-items: center;           /* Centrado horizontal */
+    gap: 20px;                     /* Espacio entre elementos */
+    scroll-margin-top: 100px;      /* Ajuste al hacer scroll */
 }
 
 .titulo-seccion {
-    color: white;
+    color: white;                  /* Título en blanco */
 }
 
 .contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: flex;                 /* Contenedor flexible */
+    flex-wrap: wrap;               /* Permite que los items bajen si no caben */
+    justify-content: center;       /* Centrado horizontal */
+    gap: 20px;                     /* Espacio entre tarjetas */
 }
 
 .caluga {
-    min-width: 150px;
-    min-height: 200px;
+    min-width: 150px;              /* Ancho mínimo */
+    min-height: 200px;             /* Alto mínimo */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex;                 /* Flexbox interno */
+    flex-direction: column;        /* Elementos en columna */
+    align-items: center;           /* Centrado horizontal */
+    justify-content: center;       /* Centrado vertical */
 
-    border: 1px solid black;
-    border-radius: 12px;
+    border: 1px solid black;       /* Borde negro */
+    border-radius: 12px;           /* Bordes redondeados */
 
-    background-color: rgb(251, 255, 203);
+    background-color: rgb(251, 255, 203); /* Fondo amarillo claro */
 }
 
 .caluga img {
-    width: 80px;
+    width: 80px;                   /* Imagen pequeña */
     height: 80px;
 }
 
 .nombre {
-    font-size: 15px;
-    font-weight: bold;
-    text-align: center;
-    width: 90%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    font-size: 15px;               /* Texto pequeño */
+    font-weight: bold;             /* Negrita */
+    text-align: center;            /* Centrado */
+    width: 90%;                    /* Ocupa casi todo el ancho */
+    word-wrap: break-word;         /* Permite cortar palabras largas */
+    overflow-wrap: break-word;     /* Compatibilidad adicional */
 }
 
 /* ==================================
@@ -188,52 +188,52 @@ header a:hover {
    ================================== */
 
 .button {
-    width: 100px;
-    padding: 5px 10px;
+    width: 100px;                  /* Ancho fijo */
+    padding: 5px 10px;             /* Relleno interno */
 
-    border: none;
-    border-radius: 5px;
+    border: none;                  /* Sin borde */
+    border-radius: 5px;            /* Bordes redondeados */
 
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-transform: uppercase;
+    font-size: 10px;               /* Texto pequeño */
+    font-weight: bold;             /* Negrita */
+    letter-spacing: 5px;           /* Espaciado entre letras */
+    text-transform: uppercase;     /* Texto en mayúsculas */
 
-    cursor: pointer;
+    cursor: pointer;               /* Cursor de mano */
 
-    position: relative;
-    overflow: hidden;
+    position: relative;            /* Necesario para pseudo-elemento */
+    overflow: hidden;              /* Oculta contenido que se desborde */
 
-    outline: 2px solid #0d46a1;
-    transition: all 1s;
+    outline: 2px solid #0d46a1;    /* Contorno azul */
+    transition: all 1s;            /* Transición suave */
 }
 
 .button:hover {
-    color: white;
-    transform: scale(1.1);
-    outline: 2px solid #cd0d0d;
-    box-shadow: 4px 5px 17px -4px #dc2a2a;
+    color: white;                  /* Texto blanco al hover */
+    transform: scale(1.1);         /* Se agranda un poco */
+    outline: 2px solid #cd0d0d;    /* Contorno rojo */
+    box-shadow: 4px 5px 17px -4px #dc2a2a; /* Sombra roja */
 }
 
 .button::before {
-    content: "";
-    position: absolute;
+    content: "";                   /* Pseudo-elemento vacío */
+    position: absolute;            /* Posicionado dentro del botón */
 
-    left: -50px;
+    left: -50px;                   /* Empieza fuera del botón */
     top: 0;
 
-    width: 0;
-    height: 100%;
+    width: 0;                      /* Inicialmente sin ancho */
+    height: 100%;                  /* Ocupa toda la altura */
 
-    background-color: #000000;
-    transform: skewX(45deg);
+    background-color: #000000;     /* Franja negra */
+    transform: skewX(45deg);       /* Inclinada diagonalmente */
 
-    z-index: -1;
-    transition: width 1s;
+    z-index: -1;                   /* Detrás del texto */
+    transition: width 1s;          /* Animación de expansión */
 }
 
 .button:hover::before {
-    width: 250%;
+    width: 250%;                   /* Se expande mucho más allá del botón */
 }
 
 /* ==================================
@@ -241,8 +241,8 @@ header a:hover {
    ================================== */
 
 input {
-    display: block;
-    margin-bottom: 10px;
+    display: block;              /* Cada input ocupa toda la línea */
+    margin-bottom: 10px;         /* Espacio inferior entre campos */
 }
 
 /* ==================================
@@ -250,34 +250,34 @@ input {
    ================================== */
 
 footer {
-    background-color: #1A1A1A;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    background-color: #1A1A1A;   /* Fondo oscuro */
+    color: white;                /* Texto blanco */
+    padding: 20px;               /* Relleno interno */
+    text-align: center;          /* Centrado horizontal */
 }
 
 footer p {
-    opacity: 0.8;
-    margin-bottom: 6px;
+    opacity: 0.8;                /* Texto más tenue */
+    margin-bottom: 6px;          /* Espacio inferior */
 }
 
 .footer-brand {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 16px;
+    display: flex;               /* Agrupa logo + nombre */
+    align-items: center;         /* Centrado vertical */
+    justify-content: center;     /* Centrado horizontal */
+    gap: 10px;                   /* Espacio entre elementos */
+    margin-bottom: 16px;         /* Separación inferior */
 }
 
 .footer-brand img {
-    width: 36px;
+    width: 36px;                 /* Tamaño del logo */
     height: 36px;
-    border-radius: 6px;
+    border-radius: 6px;          /* Bordes redondeados */
 }
 
 .footer-brand span {
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: 1.1rem;           /* Texto un poco más grande */
+    font-weight: bold;           /* Negrita */
 }
 
 
@@ -286,17 +286,16 @@ footer p {
    ================================== */
 
 @media (min-height: 180px) {
-
     header {
-        flex-direction: row;
+        flex-direction: row;     /* Header en fila si la pantalla es alta */
     }
 
     header section:nth-child(2) {
-        gap: 16px;
+        gap: 16px;               /* Menor espacio entre enlaces */
     }
 
     .caluga {
-        width: 130px;
+        width: 130px;            /* Ajusta tamaño de tarjetas */
         height: 180px;
     }
 }
@@ -304,274 +303,263 @@ footer p {
 /* ===== AGREGADO: menú de usuario (Iniciar sesión / Registrarse) ===== */
 
 .user-menu {
-    position: relative;
+    position: relative;          /* Contenedor relativo para dropdown */
 }
 
 .user-menu #menu {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    color: initial;
-    letter-spacing: normal;
-    text-transform: none;
-    outline: none;
-    transition: none;
-    overflow: visible;
-    width: auto;
+    background: none;            /* Sin fondo */
+    border: none;                /* Sin borde */
+    cursor: pointer;             /* Cursor de mano */
+    padding: 8px;                /* Relleno interno */
+    color: initial;              /* Color por defecto */
+    letter-spacing: normal;      /* Espaciado normal */
+    text-transform: none;        /* Texto normal */
+    outline: none;               /* Sin contorno */
+    transition: none;            /* Sin animación */
+    overflow: visible;           /* No oculta contenido */
+    width: auto;                 /* Ajusta al contenido */
 }
 
 .user-menu #menu:hover {
-    color: initial;
-    transform: none;
-    outline: none;
-    box-shadow: none;
+    color: initial;              /* No cambia color */
+    transform: none;             /* Sin transformación */
+    outline: none;               /* Sin contorno */
+    box-shadow: none;            /* Sin sombra */
 }
 
 .user-menu #menu::before {
-    content: none;
+    content: none;               /* No usa pseudo-elemento */
 }
 
 #userMenuDropdown {
-    position: absolute;
-    top: 45px;
-    right: 0px;
-    background-color: white;
-    border: 1px solid gray;
-    border-radius: 8px;
-    padding: 10px;
-    display: flex;
+    position: absolute;          /* Dropdown posicionado respecto al menú */
+    top: 45px;                   /* Aparece debajo del botón */
+    right: 0px;                  /* Alineado a la derecha */
+    background-color: white;     /* Fondo blanco */
+    border: 1px solid gray;      /* Borde gris */
+    border-radius: 8px;          /* Bordes redondeados */
+    padding: 10px;               /* Relleno interno */
+    display: flex;               /* Flexbox en columna */
     flex-direction: column;
-    min-width: 150px;
-    z-index: 200;
+    min-width: 150px;            /* Ancho mínimo */
+    z-index: 200;                /* Encima de otros elementos */
 }
 
 #userMenuDropdown.hidden {
-    display: none;
+    display: none;               /* Oculto cuando tiene clase hidden */
 }
 
 #userMenuDropdown button {
-    margin-bottom: 5px;
-    padding: 8px;
-    border: none;
-    background-color: #f2f2f2;
-    cursor: pointer;
-    color: initial;
-    letter-spacing: normal;
-    text-transform: none;
-    outline: none;
-    transition: none;
-    overflow: visible;
-    width: 100%;
+    margin-bottom: 5px;          /* Espacio inferior */
+    padding: 8px;                /* Relleno interno */
+    border: none;                /* Sin borde */
+    background-color: #f2f2f2;   /* Fondo gris claro */
+    cursor: pointer;             /* Cursor de mano */
+    color: initial;              /* Color por defecto */
+    letter-spacing: normal;      /* Espaciado normal */
+    text-transform: none;        /* Texto normal */
+    outline: none;               /* Sin contorno */
+    transition: none;            /* Sin animación */
+    overflow: visible;           /* No oculta contenido */
+    width: 100%;                 /* Ocupa todo el ancho */
 }
 
 #userMenuDropdown button:hover {
-    color: initial;
-    transform: none;
-    outline: none;
-    box-shadow: none;
-    background-color: #e0e0e0;
+    color: initial;              /* No cambia color */
+    transform: none;             /* Sin transformación */
+    outline: none;               /* Sin contorno */
+    box-shadow: none;            /* Sin sombra */
+    background-color: #e0e0e0;   /* Fondo gris más oscuro */
 }
 
 #userMenuDropdown button::before {
-    content: none;
+    content: none;               /* No usa pseudo-elemento */
 }
+
 
 /* ===== Cuadrado para el registrase ===== */
 .form-card {
-    background-color: #fff;
-    border-radius: 16px;
-    padding: 32px;
-    max-width: 400px;
-    margin: 60px auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    text-align: center;
+    background-color: #fff;        /* Fondo blanco */
+    border-radius: 16px;           /* Bordes redondeados */
+    padding: 32px;                 /* Relleno interno */
+    max-width: 400px;              /* Ancho máximo */
+    margin: 60px auto;             /* Centrado con margen superior/inferior */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    text-align: center;            /* Texto centrado */
 }
 
 .form-card h1 {
-    margin-bottom: 8px;
+    margin-bottom: 8px;            /* Espacio inferior */
 }
 
 .form-card p {
-    color: #444;
-    margin-bottom: 20px;
+    color: #444;                   /* Texto gris oscuro */
+    margin-bottom: 20px;           /* Separación inferior */
 }
 
 .form-card form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: flex;                 /* Flexbox */
+    flex-direction: column;        /* Campos en columna */
+    gap: 12px;                     /* Espacio entre campos */
 }
 
 .form-card input[type="text"],
 .form-card input[type="email"],
 .form-card input[type="tel"],
 .form-card input[type="password"] {
-    padding: 10px 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
+    padding: 10px 14px;            /* Relleno interno */
+    border: 1px solid #ccc;        /* Borde gris claro */
+    border-radius: 8px;            /* Bordes redondeados */
+    font-size: 14px;               /* Tamaño de texto */
 }
 
 .form-card label {
-    font-size: 13px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    font-size: 13px;               /* Texto pequeño */
+    text-align: left;              /* Alineado a la izquierda */
+    display: flex;                 /* Flexbox para icono + texto */
+    align-items: center;           /* Centrado vertical */
+    gap: 6px;                      /* Espacio entre elementos */
 }
 
-/*botonde registrase */
+/* Botón de registrarse */
 .btn-registro {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: #1A1A1A;
-    color: #fff;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 250ms ease;
-    position: relative;
-    /* contiene el pseudo-elemento ::before */
-    overflow: hidden;
-    /* corta lo que se desborda */
+    padding: 12px 20px;            /* Relleno interno */
+    border: none;                  /* Sin borde */
+    border-radius: 8px;            /* Bordes redondeados */
+    background-color: #1A1A1A;     /* Fondo oscuro */
+    color: #fff;                   /* Texto blanco */
+    font-weight: bold;             /* Negrita */
+    font-size: 15px;               /* Tamaño medio */
+    cursor: pointer;               /* Cursor de mano */
+    transition: all 250ms ease;    /* Animación suave */
+    position: relative;            /* Para pseudo-elemento ::before */
+    overflow: hidden;              /* Oculta contenido desbordado */
 }
 
 .btn-registro:hover {
-    background-color: #4d75ca;
-    transform: scale(1.02);
+    background-color: #4d75ca;     /* Azul al hover */
+    transform: scale(1.02);        /* Se agranda un poco */
 }
 
 .btn-registro::before {
-    background-color: #2563EB;
-    /* la franja azul, solo para este botón */
+    background-color: #2563EB;     /* Franja azul decorativa */
 }
 
+/* Mensajes de éxito y error */
 .mensaje-exito {
-    margin-top: 16px;
-    color: #1a7a1a;
-    font-weight: bold;
-    font-size: 14px;
+    margin-top: 16px;              /* Separación superior */
+    color: #1a7a1a;                /* Verde éxito */
+    font-weight: bold;             /* Negrita */
+    font-size: 14px;               /* Tamaño medio */
 }
 
 .mensaje-exito.hidden {
-    display: none;
+    display: none;                 /* Oculto si tiene clase hidden */
 }
 
 .mensaje-error {
-    color: #C8102E;
-    font-size: 12px;
-    text-align: left;
-    margin-top: -6px;
+    color: #C8102E;                /* Rojo error */
+    font-size: 12px;               /* Texto pequeño */
+    text-align: left;              /* Alineado a la izquierda */
+    margin-top: -6px;              /* Ajuste de posición */
 }
 
 .mensaje-error.hidden {
-    display: none;
+    display: none;                 /* Oculto si tiene clase hidden */
 }
 
-.mensaje-exito {
-    margin-top: 16px;
-    color: #1a7a1a;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.mensaje-exito.hidden {
-    display: none;
-}
-
+/* Enlaces de producto */
 .producto-link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
+    text-decoration: none;         /* Sin subrayado */
+    color: inherit;                /* Hereda color del padre */
+    display: flex;                 /* Flexbox en columna */
     flex-direction: column;
-    align-items: center;
-    gap: 6px;
+    align-items: center;           /* Centrado horizontal */
+    gap: 6px;                      /* Espacio entre elementos */
 }
 
+/* Enlaces secundarios */
 .link-secundario a {
-    color: #c0392b;
-    /* rojo - ajusta el tono que prefieras */
-    text-decoration: none;
-    font-weight: bold;
+    color: #c0392b;                /* Rojo */
+    text-decoration: none;         /* Sin subrayado */
+    font-weight: bold;             /* Negrita */
 }
 
 .link-secundario a:hover {
-    text-decoration: underline;
+    text-decoration: underline;    /* Subrayado al hover */
 }
 
 .link-secundario {
-    margin-top: 20px;
-    /* ajusta el valor a tu gusto: 30px, 40px, etc. */
+    margin-top: 20px;              /* Separación superior */
 }
+
 
 /* ==================================
    CARRITO DE COMPRAS
    ================================== */
 
 .carrito-icono {
-    position: relative;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 26px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+    position: relative;            /* Contenedor relativo para el badge */
+    background: transparent;       /* Sin fondo */
+    border: none;                  /* Sin borde */
+    color: white;                  /* Icono en blanco */
+    font-size: 26px;               /* Tamaño grande */
+    cursor: pointer;               /* Cursor de mano */
+    display: flex;                 /* Flexbox */
+    align-items: center;           /* Centrado vertical */
 }
 
 .carrito-badge {
-    position: absolute;
-    top: -6px;
-    right: -10px;
-    background-color: #C8102E;
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-    min-width: 18px;
+    position: absolute;            /* Posicionado sobre el icono */
+    top: -6px;                     /* Arriba del icono */
+    right: -10px;                  /* A la derecha */
+    background-color: #C8102E;     /* Fondo rojo */
+    color: white;                  /* Texto blanco */
+    font-size: 11px;               /* Texto pequeño */
+    font-weight: bold;             /* Negrita */
+    min-width: 18px;               /* Tamaño mínimo */
     height: 18px;
-    border-radius: 50%;
-    display: flex;
+    border-radius: 50%;            /* Forma circular */
+    display: flex;                 /* Centrado interno */
     align-items: center;
     justify-content: center;
-    padding: 0 4px;
+    padding: 0 4px;                /* Ajuste horizontal */
 }
 
 .carrito-panel {
-    position: fixed;
+    position: fixed;               /* Panel fijo en pantalla */
     top: 0;
-    right: -340px;
-    width: 320px;
-    max-width: 90vw;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: -4px 0 14px rgba(0, 0, 0, 0.25);
-    z-index: 200;
-    display: flex;
+    right: -340px;                 /* Oculto fuera de la vista */
+    width: 320px;                  /* Ancho fijo */
+    max-width: 90vw;               /* Máximo relativo */
+    height: 100%;                  /* Ocupa toda la altura */
+    background-color: #fff;        /* Fondo blanco */
+    box-shadow: -4px 0 14px rgba(0, 0, 0, 0.25); /* Sombra lateral */
+    z-index: 200;                  /* Encima de otros elementos */
+    display: flex;                 /* Flexbox en columna */
     flex-direction: column;
-    transition: right 0.3s ease;
+    transition: right 0.3s ease;   /* Animación de apertura */
 }
 
 .carrito-panel.abierto {
-    right: 0;
+    right: 0;                      /* Se muestra al activarse */
 }
 
 .carrito-panel-header {
-    display: flex;
+    display: flex;                 /* Barra superior */
     align-items: center;
     justify-content: space-between;
-    background-color: #1A1A1A;
-    color: white;
+    background-color: #1A1A1A;     /* Fondo oscuro */
+    color: white;                  /* Texto blanco */
     padding: 16px;
 }
 
 .carrito-panel-header h2 {
-    font-size: 18px;
+    font-size: 18px;               /* Título del panel */
 }
 
 .carrito-cerrar {
-    background: transparent;
+    background: transparent;       /* Botón cerrar sin fondo */
     border: none;
     color: white;
     font-size: 16px;
@@ -579,34 +567,34 @@ footer p {
 }
 
 .carrito-items {
-    flex: 1;
-    overflow-y: auto;
+    flex: 1;                       /* Ocupa todo el espacio disponible */
+    overflow-y: auto;              /* Scroll vertical si hay muchos items */
     padding: 12px 16px;
 }
 
 .carrito-vacio {
-    text-align: center;
-    color: #666;
+    text-align: center;            /* Texto centrado */
+    color: #666;                   /* Gris tenue */
     margin-top: 20px;
 }
 
 .carrito-item {
-    display: flex;
+    display: flex;                 /* Item en fila */
     align-items: center;
-    gap: 10px;
+    gap: 10px;                     /* Espacio entre elementos */
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* Línea divisoria */
 }
 
 .carrito-item img {
-    width: 48px;
+    width: 48px;                   /* Imagen pequeña */
     height: 48px;
-    object-fit: cover;
-    border-radius: 6px;
+    object-fit: cover;             /* Ajuste proporcional */
+    border-radius: 6px;            /* Bordes redondeados */
 }
 
 .carrito-item-info {
-    flex: 1;
+    flex: 1;                       /* Ocupa el resto del espacio */
     display: flex;
     flex-direction: column;
 }
@@ -622,7 +610,7 @@ footer p {
 }
 
 .carrito-panel-footer {
-    display: flex;
+    display: flex;                 /* Barra inferior */
     align-items: center;
     justify-content: space-between;
     padding: 16px;
@@ -631,7 +619,7 @@ footer p {
 }
 
 .qty-control {
-    display: flex;
+    display: flex;                 /* Controles de cantidad */
     align-items: center;
     gap: 8px;
 }
@@ -641,7 +629,7 @@ footer p {
     height: 26px;
     border-radius: 5px;
     border: none;
-    outline: 2px solid #0d46a1;
+    outline: 2px solid #0d46a1;    /* Contorno azul */
     background-color: white;
     font-weight: bold;
     cursor: pointer;
@@ -649,8 +637,8 @@ footer p {
 }
 
 .qty-btn:hover {
-    outline: 2px solid #cd0d0d;
-    color: #cd0d0d;
+    outline: 2px solid #cd0d0d;    /* Contorno rojo al hover */
+    color: #cd0d0d;                /* Texto rojo */
 }
 
 .qty-valor {
@@ -664,47 +652,44 @@ footer p {
    ================================== */
 
 #video {
-    display: flex;
+    display: flex;                 /* Centrado horizontal */
     justify-content: center;
-    margin: 40px 0;
-    /* espacio arriba y abajo */
+    margin: 40px 0;                /* Espacio arriba y abajo */
 }
 
 .video-container {
     position: relative;
-    width: 70%;
-    /* ancho relativo, ajusta a tu gusto */
-    max-width: 900px;
-    /* límite máximo */
-    aspect-ratio: 16/9;
-    /* mantiene proporción del video */
+    width: 70%;                    /* Ancho relativo */
+    max-width: 900px;              /* Máximo ancho */
+    aspect-ratio: 16/9;            /* Mantiene proporción */
 }
 
 .video-container iframe {
-    position: absolute;
+    position: absolute;            /* Ocupa todo el contenedor */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 12px;     /* esquinas redondeadas opcionales */
+    border-radius: 12px;           /* Esquinas redondeadas */
 }
 
-.header-controls{
-    display: flex;
+.header-controls {
+    display: flex;                 /* Controles en fila */
     align-items: center;
     gap: 12px;
 }
+
 /* ==================================
    PANEL DE ADMINISTRACIÓN
    ================================== */
 
 .admin-panel {
-    gap: 24px;
+    gap: 24px;                     /* Espacio entre secciones */
 }
 
 .tabla-admin {
-    width: 100%;
-    border-collapse: collapse;
+    width: 100%;                   /* Ocupa todo el ancho */
+    border-collapse: collapse;     /* Bordes colapsados */
     background-color: #fff;
 }
 
@@ -717,33 +702,33 @@ footer p {
 }
 
 .tabla-admin th {
-    background-color: #1A1A1A;
-    color: #fff;
+    background-color: #1A1A1A;     /* Cabecera oscura */
+    color: #fff;                   /* Texto blanco */
 }
 
 .admin-thumb {
-    width: 50px;
+    width: 50px;                   /* Imagen pequeña */
     height: 50px;
     object-fit: cover;
     border-radius: 5px;
 }
 
 .tabla-admin input[type="number"] {
-    width: 80px;
+    width: 80px;                   /* Campo numérico pequeño */
     padding: 5px;
 }
 
 .admin-acciones {
-    display: flex;
+    display: flex;                 /* Botones en fila */
     gap: 8px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;               /* Se adaptan si no caben */
 }
 
-/* ---- Pestañas Stock/Producto dentro del header (mismo look que "Inicio") ---- */
+/* ---- Pestañas Stock/Producto dentro del header ---- */
 .admin-nav-link.active {
-    color: #C8102E;
+    color: #C8102E;                /* Rojo para pestaña activa */
 }
 
 .oculto {
-    display: none;
+    display: none;                 /* Oculta elementos */
 }

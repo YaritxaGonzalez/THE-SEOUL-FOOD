@@ -1,4 +1,6 @@
 const PRODUCTOS = [
+    // Array con todos los productos base de la tienda
+    // Cada objeto tiene: id, nombre, imagen, precio, descripción y stock
     { id: "01", nombre: "Nongshim Chapagetti",              imagen: "imagenes/Nongshim-Chapagetti-Exp.webp",                precio: 3990, descripcion: "Fideos estilo jjajangmyeon con salsa de pasta de soja negra.",   stock: 10 },
     { id: "02", nombre: "Nongshim Sarigomtang",             imagen: "imagenes/Nongshim-Sarigomtang-Ramyeon.webp",           precio: 3990, descripcion: "Ramyeon con sabor a caldo de huesos, suave y reconfortante.",    stock: 10 },
     { id: "03", nombre: "Ottogi Jin Veggie",                imagen: "imagenes/Otoki-Jin-Veggie.webp",                       precio: 3790, descripcion: "Versión vegetariana del clásico Jin Ramyeon.",                   stock: 10 },
@@ -19,29 +21,35 @@ const PRODUCTOS = [
 ];
 
 function mostrarProducto(){
+    if (!document.getElementById("detalleProducto")) return; 
+    // Si no estamos en la página de detalle, no hace nada
 
-    if (!document.getElementById("detalleProducto")) return;
-    
     const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+    const id = params.get("id"); 
+    // Obtiene el parámetro ?id= de la URL
 
     const producto = PRODUCTOS.find(function(p){ return p.id === id; });
+    // Busca el producto con ese ID en el catálogo
 
     if (!producto){
+        // Si no existe, muestra mensaje de error
         document.getElementById("detalleProducto").innerHTML = "<p>Producto no encontrado.</p>";
         return;
     }
 
+    // Rellena los elementos HTML con la información del producto
     document.getElementById("productoImagen").src = "../" + producto.imagen;
     document.getElementById("productoImagen").alt = producto.nombre;
     document.getElementById("productoNombre").textContent = producto.nombre;
     document.getElementById("productoDescripcion").textContent = producto.descripcion;
     document.getElementById("productoPrecio").textContent = "Precio: $" + producto.precio.toLocaleString("es-CL");
 
-    // Para saber qué producto se está agregando
+    // Asigna el ID al botón "Agregar" para saber qué producto añadir al carrito
     var btnAgregar = document.getElementById("btnAgregarDetalle");
     if (btnAgregar) btnAgregar.dataset.id = producto.id;
 }
+mostrarProducto();
+
 
 mostrarProducto();
 // ==========================================
@@ -55,12 +63,12 @@ mostrarProducto();
     var editados   = JSON.parse(localStorage.getItem("productosEditados"))   || {};
     var eliminados = JSON.parse(localStorage.getItem("productosEliminados")) || [];
 
-    // Saca del catálogo los productos base que el admin eliminó
+    // Elimina del catálogo los productos que el admin borró
     for (var i = PRODUCTOS.length - 1; i >= 0; i--){
         if (eliminados.indexOf(PRODUCTOS[i].id) !== -1) PRODUCTOS.splice(i, 1);
     }
 
-    // Aplica precio/stock editados sobre los productos base que quedan
+    // Aplica cambios de precio/stock sobre los productos existentes
     PRODUCTOS.forEach(function(p){
         if (editados[p.id]){
             p.precio = editados[p.id].precio;
@@ -68,6 +76,6 @@ mostrarProducto();
         }
     });
 
-    // Agrega al final los productos nuevos creados por el admin
+    // Agrega al catálogo los productos nuevos creados por el admin
     agregados.forEach(function(p){ PRODUCTOS.push(p); });
 })();

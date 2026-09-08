@@ -2,87 +2,99 @@
    CARRUSEL - una imagen a la vez
    ================================ */
 
+/* Contenedor principal del carrusel */
 #carrusel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-    scroll-margin-top: 100px;
+    display: flex;                  /* Flexbox para organizar elementos */
+    flex-direction: column;         /* Los hijos se apilan en columna */
+    align-items: center;            /* Centra horizontalmente */
+    gap: 16px;                      /* Espacio entre elementos */
+    width: 100%;                    /* Ocupa todo el ancho */
+    scroll-margin-top: 100px;       /* Margen superior al hacer scroll */
 }
 
+/* Contenedor que agrupa flechas y pista */
 .carrusel-container {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 90%;
-    max-width: 480px;
-    margin: 0 auto;
+    display: flex;                  /* Flexbox en fila */
+    align-items: center;            /* Centra verticalmente */
+    gap: 16px;                      /* Espacio entre flechas y pista */
+    width: 90%;                     /* Ocupa el 90% del ancho */
+    max-width: 480px;               /* Máximo ancho fijo */
+    margin: 0 auto;                 /* Centrado horizontal */
 }
 
+/* Flechas de navegación */
 .carrusel-container span {
-    font-size: 2em;
-    cursor: pointer;
-    color: #4e13d7;
-    text-shadow: 0 0 8px #3e0ce1, 0 0 18px #4013d3;
-    transition: transform 0.2s;
+    font-size: 2em;                 /* Tamaño grande */
+    cursor: pointer;                /* Cursor de mano */
+    color: #4e13d7;                 /* Color violeta */
+    text-shadow: 0 0 8px #3e0ce1,   /* Brillo violeta */
+                 0 0 18px #4013d3;
+    transition: transform 0.2s;     /* Animación al pasar el mouse */
 }
-
 .carrusel-container span:hover {
-    transform: scale(1.15);
+    transform: scale(1.15);         /* Efecto zoom al hover */
 }
 
+/* Pista del carrusel */
 .carrusel-track {
-    position: relative;
+    position: relative;             /* Posiciona las slides encima */
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1;            /* Cuadrado (ancho = alto) */
     background: transparent;
 }
 
+/* Cada slide (imagen) */
 .carrusel-slide {
-    position: absolute;
-    inset: 0;
+    position: absolute;             /* Se superponen en la pista */
+    inset: 0;                       /* Ocupan todo el espacio */
     display: block;
-    border-radius: 30px;
+    border-radius: 30px;            /* Bordes redondeados */
     background-color: transparent;
-    background-size: contain;      /* fondo transparente, no recorta la imagen */
+    background-size: contain;       /* Imagen completa sin recortar */
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.9);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;                     /* Ocultas por defecto */
+    pointer-events: none;           /* No interactúan si no están activas */
+    transform: scale(0.9);          /* Leve reducción inicial */
+    transition: opacity 0.4s ease,  /* Animación suave */
+                transform 0.4s ease;
     cursor: pointer;
 }
 
+/* Slide activa */
 .carrusel-slide.a {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1);
-    filter: drop-shadow(0 0 20px #4f0ad9) drop-shadow(0 0 35px #00eaff66);
+    opacity: 1;                     /* Visible */
+    pointer-events: auto;           /* Interactuable */
+    transform: scale(1);            /* Tamaño normal */
+    filter: drop-shadow(0 0 20px #4f0ad9) 
+            drop-shadow(0 0 35px #00eaff66); /* Brillo violeta + azul */
 }
 
+/* Lista de indicadores (bolitas) */
 .slide {
-    list-style: none;
-    display: flex;
+    list-style: none;               /* Sin viñetas */
+    display: flex;                  /* Flexbox en fila */
     flex-direction: row;
-    justify-content: center;
+    justify-content: center;        /* Centrado horizontal */
     padding: 0;
     margin: 0;
 }
 
+/* Cada bolita */
 .slide li {
-    padding: 6px;
-    border: 2px solid #0e06f7;
-    border-radius: 50%;
-    margin-right: 0.8em;
+    padding: 6px;                   /* Tamaño de la bolita */
+    border: 2px solid #0e06f7;      /* Borde azul fuerte */
+    border-radius: 50%;             /* Forma circular */
+    margin-right: 0.8em;            /* Espacio entre bolitas */
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Última bolita sin margen */
 .slide li:last-child { margin-right: 0; }
 
+/* Bolita activa */
 .slide li.b {
-    background-color: #de2110;
-    box-shadow: 0 0 10px #3c0cdb;
+    background-color: #de2110;      /* Rojo intenso */
+    box-shadow: 0 0 10px #3c0cdb;   /* Brillo violeta */
 }

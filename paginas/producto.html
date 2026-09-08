@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Producto - The Seoul Food</title>
+
+    <!-- Estilos principales -->
     <link rel="stylesheet" href="../styles/estilos.css">
     <link rel="stylesheet" href="../styles/estiloMatriz.css">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../imagenes/store-front.png">
+
+    <!-- Iconos (Boxicons) -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
 
+    <!-- Header inyectado dinámicamente -->
     <header id="header"></header>
 
+    <!-- Contenido principal -->
     <section id="content">
         <article class="form-card" id="detalleProducto">
+            <!-- Imagen del producto -->
             <img id="productoImagen" src="" alt="" style="max-width:200px; border-radius:8px;">
+            
+            <!-- Nombre del producto -->
             <h1 id="productoNombre"></h1>
+            
+            <!-- Descripción -->
             <p id="productoDescripcion"></p>
+            
+            <!-- Precio -->
             <span id="productoPrecio" class="precio"></span><br><br>
+            
+            <!-- Botón para agregar al carrito -->
             <button class="button producto-control" id="btnAgregarDetalle">Agregar</button><br><br>
 
+            <!-- Botón para volver al inicio -->
             <a href="../index.html" class="btn-registro btn-volver">Volver al inicio</a>
         </article>
     </section>
 
+    <!-- Footer inyectado dinámicamente -->
     <footer id="footer"></footer>
 
+    <!-- Scripts -->
     <script src="../scripts/productos.js"></script>
     <script src="../scripts/matriz.js"></script>
     <script src="../scripts/scripts.js"></script>
