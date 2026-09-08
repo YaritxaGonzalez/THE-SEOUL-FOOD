@@ -44,3 +44,30 @@ function mostrarProducto(){
 }
 
 mostrarProducto();
+// ==========================================
+// Aplica sobre el catálogo base los cambios guardados
+// por el administrador (agregar, editar, eliminar).
+// Se ejecuta en TODAS las páginas que cargan productos.js,
+// así el catálogo se ve igual en tienda, detalle y carrito.
+// ==========================================
+(function aplicarCambiosAdmin(){
+    var agregados  = JSON.parse(localStorage.getItem("productosAgregados"))  || [];
+    var editados   = JSON.parse(localStorage.getItem("productosEditados"))   || {};
+    var eliminados = JSON.parse(localStorage.getItem("productosEliminados")) || [];
+
+    // Saca del catálogo los productos base que el admin eliminó
+    for (var i = PRODUCTOS.length - 1; i >= 0; i--){
+        if (eliminados.indexOf(PRODUCTOS[i].id) !== -1) PRODUCTOS.splice(i, 1);
+    }
+
+    // Aplica precio/stock editados sobre los productos base que quedan
+    PRODUCTOS.forEach(function(p){
+        if (editados[p.id]){
+            p.precio = editados[p.id].precio;
+            p.stock  = editados[p.id].stock;
+        }
+    });
+
+    // Agrega al final los productos nuevos creados por el admin
+    agregados.forEach(function(p){ PRODUCTOS.push(p); });
+})();

@@ -694,3 +694,56 @@ footer p {
     align-items: center;
     gap: 12px;
 }
+/* ==================================
+   PANEL DE ADMINISTRACIÓN
+   ================================== */
+
+.admin-panel {
+    gap: 24px;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.tabla-admin th,
+.tabla-admin td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tabla-admin th {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
+.admin-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.tabla-admin input[type="number"] {
+    width: 80px;
+    padding: 5px;
+}
+
+.admin-acciones {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ---- Pestañas Stock/Producto dentro del header (mismo look que "Inicio") ---- */
+.admin-nav-link.active {
+    color: #C8102E;
+}
+
+.oculto {
+    display: none;
+}
