@@ -1,10 +1,13 @@
 function pintarProductos(){
-    var contenedor = document.querySelector(".contenedor");
-    if (!contenedor) return;
+    var contenedor = document.querySelector(".contenedor"); 
+    // Busca el contenedor donde se mostrarán los productos
+    if (!contenedor) return; 
+    // Si no existe, termina la función
 
     var html = "";
 
     PRODUCTOS.forEach(function(producto){
+        // Recorre cada producto del array PRODUCTOS
         html += `
             <article class="caluga">
                 <a href="paginas/producto.html?id=${producto.id}" class="producto-link">
@@ -15,9 +18,16 @@ function pintarProductos(){
                 <button class="button producto-control" data-id="${producto.id}" ${producto.stock === 0 ? 'disabled' : ''}>Agregar</button>
             </article>
         `;
+        // Genera el HTML de cada tarjeta:
+        // - Link al detalle del producto con su ID en la URL
+        // - Nombre y foto
+        // - Precio formateado en pesos chilenos
+        // - Botón "Agregar" (deshabilitado si stock = 0)
     });
 
-    contenedor.innerHTML = html;
+    contenedor.innerHTML = html; 
+    // Inserta todo el HTML generado en el contenedor
 }
 
-pintarProductos();
+pintarProductos(); 
+// Llama a la función para pintar los productos al cargar la página
