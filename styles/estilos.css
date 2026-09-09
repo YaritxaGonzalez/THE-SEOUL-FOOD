@@ -148,26 +148,25 @@ header a:hover {
 }
 
 .contenedor {
-    display: flex;                 /* Contenedor flexible */
-    flex-wrap: wrap;               /* Permite que los items bajen si no caben */
-    justify-content: center;       /* Centrado horizontal */
-    gap: 20px;                     /* Espacio entre tarjetas */
+    display: grid;
+    grid-template-columns: repeat(6, auto); /* 6 columnas, ancho según contenido */
+    gap: 20px;
+    justify-content: center;                /* centra el grid */
 }
 
 .caluga {
-    min-width: 150px;              /* Ancho mínimo */
-    min-height: 200px;             /* Alto mínimo */
+    width: 150px;   /* tamaño fijo */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    display: flex;                 /* Flexbox interno */
-    flex-direction: column;        /* Elementos en columna */
-    align-items: center;           /* Centrado horizontal */
-    justify-content: center;       /* Centrado vertical */
-
-    border: 1px solid black;       /* Borde negro */
-    border-radius: 12px;           /* Bordes redondeados */
-
-    background-color: rgb(251, 255, 203); /* Fondo amarillo claro */
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: rgb(251, 255, 203);
 }
+
 
 .caluga img {
     width: 80px;                   /* Imagen pequeña */
@@ -280,25 +279,6 @@ footer p {
     font-weight: bold;           /* Negrita */
 }
 
-
-/* ==================================
-   RESPONSIVE
-   ================================== */
-
-@media (min-height: 180px) {
-    header {
-        flex-direction: row;     /* Header en fila si la pantalla es alta */
-    }
-
-    header section:nth-child(2) {
-        gap: 16px;               /* Menor espacio entre enlaces */
-    }
-
-    .caluga {
-        width: 130px;            /* Ajusta tamaño de tarjetas */
-        height: 180px;
-    }
-}
 
 /* ===== AGREGADO: menú de usuario (Iniciar sesión / Registrarse) ===== */
 
